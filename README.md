@@ -13,5 +13,10 @@ source env/bin/activate
 pip install  -r requirements.txt
 GOOGLE_CLOUD_PROJECT=$(gcloud config get-value project) python3 main.py
 ```
+When running locally from Cloud Shell, the app will use your personal identity for accessing KMS;
+when running on App Engine it will use the App Engine default service account
+([PROJECT_NAME]@appspot.gserviceaccount.com). By default these are both authorized to use KMS keys
+in a project you've created (you because you're the project owner and the App Engine service account
+because it defaults to being a project editor).
 
 You can deploy to App Engine with `gcloud app deploy`
