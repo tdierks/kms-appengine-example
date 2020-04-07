@@ -22,7 +22,7 @@ kms = kms_v1.KeyManagementServiceClient()
 #  * Click "+ Add Member"
 #  * add [PROJECT_NAME]@appspot.gserviceaccount.com (default app engine service account)
 #  * with role "Cloud KMS CryptoKey Encrypter/Decrypter"
-key_name = kms.crypto_key_path_path(os.environ['GOOGLE_CLOUD_PROJECT'], 'us-central1', 'example-key-ring', 'example-key')
+key_name = kms.crypto_key_path_path(os.environ['GOOGLE_CLOUD_PROJECT'], 'global', 'example-key-ring', 'example-key')
 
 @app.route('/')
 def index():
